@@ -44,7 +44,7 @@ public class BinaryTree{
             populate(sc, node.right);
         }
     }
-
+    //Post-order traversal
     private void display(Node node)
     {
         if(node==null)
