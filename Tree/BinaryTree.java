@@ -27,7 +27,7 @@ public class BinaryTree{
 
     private void populate(Scanner sc, Node node)
     {
-        System.out.println("Do you want to add a left child:");
+        System.out.println("Do you want to add a left child of "+node.val+" :");
         boolean choice=sc.nextBoolean();
         if(choice)
         {
@@ -35,7 +35,7 @@ public class BinaryTree{
             node.left=new Node(sc.nextInt());
             populate(sc, node.left);
         }
-        System.out.println("Do you want to add a right child:");
+        System.out.println("Do you want to add a right child of "+node.val+" :");
         choice=sc.nextBoolean();
         if(choice)
         {
@@ -44,15 +44,15 @@ public class BinaryTree{
             populate(sc, node.right);
         }
     }
-    //Post-order traversal
     private void display(Node node)
     {
         if(node==null)
         return;
+        System.out.print(node.val);//Pre-order traversal
         display(node.left);
+        // System.out.print(node.val);//In-order traversal
         display(node.right);
-        System.out.print(node.val);
-        // System.out.print(node.val);
+        // System.out.print(node.val);//Post-order traversal
     }
 
     public static void main(String[] args)
